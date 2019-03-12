@@ -1,17 +1,14 @@
 import React, { Component } from 'react'
 
 class ClickityClick extends Component {
-  constructor() {
-    super()
-    this.state = {
-      hasBeenClicked: false
-    };
-  }
+  state = {
+    hasBeenClicked: false
+  };
 
   handleClick = () => {
     this.setState({
-      hasBeenClicked: true
-    })
+      hasBeenClicked: !this.state.hasBeenClicked
+    }, () => console.log(this.state.hasBeenClicked));
   }
 
   render() {
